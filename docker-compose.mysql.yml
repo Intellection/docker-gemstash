@@ -4,12 +4,12 @@ services:
   gemstash:
     image: zappi/gemstash:1.1.0
     environment:
-      - GEMSTASH_DB_ADAPTER=mysql2
-      - GEMSTASH_DB_USERNAME=root
-      - GEMSTASH_DB_PASSWORD=sekretpassword
-      - GEMSTASH_DB_DATABASE=gemstash
-      - GEMSTASH_DB_HOST=mysql
-      - GEMSTASH_DB_PORT=3306
+      GEMSTASH_DB_ADAPTER: mysql2
+      GEMSTASH_DB_USERNAME: root
+      GEMSTASH_DB_PASSWORD: sekretpassword
+      GEMSTASH_DB_DATABASE: gemstash
+      GEMSTASH_DB_HOST: mysql
+      GEMSTASH_DB_PORT: 3306
     ports:
       - 9292:9292
     volumes:
