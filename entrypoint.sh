@@ -7,7 +7,9 @@ if [ "$1" = "gemstash" ] && [ "$(id -u)" = "0" ]; then
     # Change the ownership of user-mutable directories to gemstash
     chown -R "${GEMSTASH_USER}:${GEMSTASH_USER}" "${GEMSTASH_HOME}/data"
 
-    set -- su-exec "${GEMSTASH_USER}" tini -- "$@"
+    # Run gemstash as gemstash user
+    command="tini -- ${*} --config-file=${GEMSTASH_HOME}/app/config.yml.erb"
+    set -- su-exec "${GEMSTASH_USER}" ${command}
 fi
 
 # As argument is not related to gemstash, then assume that user wants to run his

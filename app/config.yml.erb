@@ -1,0 +1,19 @@
+:base_path: <%= "#{ENV['GEMSTASH_HOME']}/data" %>
+:cache_type: memory
+:rubygems_url: https://rubygems.org
+:puma_threads: 16
+:bind: tcp://0.0.0.0:9292
+:protected_fetch: false
+:fetch_timeout: 20
+:log_file: :stdout
+
+# MySQL Adapter Settings
+<% if ENV['GEMSTASH_DB_ADAPTER'] == 'mysql2' %>
+:db_adapter: <%= ENV['GEMSTASH_DB_ADAPTER'] %>
+:db_url: <%= "#{ENV['GEMSTASH_DB_ADAPTER']}://#{ENV['GEMSTASH_DB_USERNAME']}:#{ENV['GEMSTASH_DB_PASSWORD']}@#{ENV['GEMSTASH_DB_HOST']}:#{ENV['GEMSTASH_DB_PORT']}/#{ENV['GEMSTASH_DB_DATABASE']}" %>
+:db_connection_options:
+  :adapter: mysql2
+  :encoding: utf8
+  :reconnect: false
+  :pool: 5
+<% end %>
