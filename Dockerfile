@@ -25,8 +25,6 @@ COPY "app/" "${GEMSTASH_HOME}/app"
 RUN bundle config disable_checksum_validation true && \
     bundle install --jobs 4 --retry 3
 
-# Initialize volume
-RUN mkdir -p "${GEMSTASH_HOME}/data"
 VOLUME "${GEMSTASH_HOME}/data"
 
 EXPOSE 9292
