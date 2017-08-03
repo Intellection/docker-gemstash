@@ -1,14 +1,13 @@
 FROM ruby:2.4.1-alpine
 
-ENV RUNTIME_PACKAGES="tini" \
-    BUILD_PACKAGES="build-base sqlite-dev" \
-    GEMSTASH_VERSION="1.1.0"
-
-RUN apk update && \
-    apk add ${BUILD_PACKAGES} ${RUNTIME_PACKAGES} && \
+ENV GEMSTASH_VERSION="1.1.0"
+RUN apk --update add tini && \
+    apk --update add --virtual "build-dependencies" \
+      build-base \
+      sqlite-dev && \
     echo "gem: --no-ri --no-rdoc" > /root/.gemrc && \
-    gem install gemstash -v ${GEMSTASH_VERSION} && \
-    apk del ${BUILD_PACKAGES} && \
+    gem install gemstash -v "${GEMSTASH_VERSION}" && \
+    apk del "build-dependencies" && \
     rm -rf /var/cache/apk/*
 
 ENTRYPOINT ["tini", "--"]
