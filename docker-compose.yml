@@ -1,0 +1,10 @@
+---
+version: '2'
+services:
+  gemstash:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: zappi/gemstash
+    ports:
+      - 80:9292
