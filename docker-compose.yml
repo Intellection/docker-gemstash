@@ -7,4 +7,4 @@ services:
       dockerfile: Dockerfile
     image: zappi/gemstash
     ports:
-      - 80:9292
+      - 9292:9292
