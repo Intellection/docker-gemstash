@@ -11,9 +11,4 @@
 <% if ENV['GEMSTASH_DB_ADAPTER'] == 'mysql2' %>
 :db_adapter: <%= ENV['GEMSTASH_DB_ADAPTER'] %>
 :db_url: <%= "#{ENV['GEMSTASH_DB_ADAPTER']}://#{ENV['GEMSTASH_DB_USERNAME']}:#{ENV['GEMSTASH_DB_PASSWORD']}@#{ENV['GEMSTASH_DB_HOST']}:#{ENV['GEMSTASH_DB_PORT']}/#{ENV['GEMSTASH_DB_DATABASE']}" %>
-:db_connection_options:
-  :adapter: mysql2
-  :encoding: utf8
-  :reconnect: false
-  :pool: 5
 <% end %>
