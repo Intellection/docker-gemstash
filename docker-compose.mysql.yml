@@ -4,6 +4,7 @@ services:
   gemstash:
     image: zappi/gemstash:1.1.0
     environment:
+      RACK_ENV: production
       GEMSTASH_DB_ADAPTER: mysql2
       GEMSTASH_DB_USERNAME: root
       GEMSTASH_DB_PASSWORD: sekretpassword
