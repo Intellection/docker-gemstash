@@ -2,7 +2,7 @@ FROM ruby:2.4.1-alpine
 
 ENV RUNTIME_PACKAGES="tini" \
     BUILD_PACKAGES="build-base sqlite-dev" \
-    GEMSTASH_VERSION="1.0.4"
+    GEMSTASH_VERSION="1.1.0"
 
 RUN apk update && \
     apk add ${BUILD_PACKAGES} ${RUNTIME_PACKAGES} && \
