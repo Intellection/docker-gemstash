@@ -10,7 +10,15 @@
 <% if ENV['GEMSTASH_DB_ADAPTER'] == 'mysql2' %>
 # mysql2 adapter
 :db_adapter: mysql2
-:db_url: <%= "mysql2://#{ENV['GEMSTASH_DB_USERNAME']}:#{ENV['GEMSTASH_DB_PASSWORD']}@#{ENV['GEMSTASH_DB_HOST']}:#{ENV['GEMSTASH_DB_PORT']}/#{ENV['GEMSTASH_DB_DATABASE']}" %>
+:db_url: {}
+:db_connection_options:
+  :adapter: 'mysql2'
+  :host: <%= ENV['GEMSTASH_DB_HOST'] %>
+  :port: <%= ENV['GEMSTASH_DB_PORT'] %>
+  :database: <%= ENV['GEMSTASH_DB_DATABASE'] %>
+  :user: <%= ENV['GEMSTASH_DB_USERNAME'] %>
+  :password: <%= ENV['GEMSTASH_DB_PASSWORD'] %>
+  :test: true
 # sqlite adapter (default)
 :db_adapter: sqlite
 :db_url: sqlite://gemstash.db
