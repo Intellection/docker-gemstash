@@ -15,8 +15,8 @@ RUN apk --update add \
 # Create gemstash user
 ENV GEMSTASH_USER="gemstash"
 ENV GEMSTASH_HOME="/home/${GEMSTASH_USER}"
-RUN addgroup -g "9999" "${GEMSTASH_USER}"
-RUN adduser -S -D -u "9999" -G "${GEMSTASH_USER}" "${GEMSTASH_USER}"
+RUN addgroup -g "9999" "${GEMSTASH_USER}" && \
+    adduser -S -D -u "9999" -G "${GEMSTASH_USER}" "${GEMSTASH_USER}"
 
 # Install Gemstash
 RUN mkdir -p "${GEMSTASH_HOME}/app"
