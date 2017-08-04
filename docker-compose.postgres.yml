@@ -11,6 +11,7 @@ services:
       GEMSTASH_DB_DATABASE: gemstash
       GEMSTASH_DB_HOST: postgres
       GEMSTASH_DB_PORT: 5432
+      GEMSTASH_PUMA_THREADS: 4
     ports:
       - 9292:9292
     volumes:

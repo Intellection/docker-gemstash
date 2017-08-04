@@ -11,6 +11,7 @@ services:
       GEMSTASH_DB_DATABASE: gemstash
       GEMSTASH_DB_HOST: mysql
       GEMSTASH_DB_PORT: 3306
+      GEMSTASH_PUMA_THREADS: 4
     ports:
       - 9292:9292
     volumes:
