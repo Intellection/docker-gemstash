@@ -19,6 +19,18 @@
   :user: <%= ENV['GEMSTASH_DB_USERNAME'] %>
   :password: <%= ENV['GEMSTASH_DB_PASSWORD'] %>
   :test: true
+<% elsif ENV['GEMSTASH_DB_ADAPTER'] == 'postgres' %>
+# postgres adapter
+:db_adapter: postgres
+:db_url: <%= "postgres://#{ENV['GEMSTASH_DB_HOST']}:#{ENV['GEMSTASH_DB_PORT']}/#{ENV['GEMSTASH_DB_DATABASE']}" %>
+:db_connection_options:
+  :user: <%= ENV['GEMSTASH_DB_USERNAME'] %>
+  :password: <%= ENV['GEMSTASH_DB_PASSWORD'] %>
+  :connect_timeout: 10
+  :read_timeout: 5
+  :timeout: 30
+  :test: true
+<% else %>
 # sqlite adapter (default)
 :db_adapter: sqlite
 :db_url: sqlite://gemstash.db

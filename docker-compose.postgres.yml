@@ -1,0 +1,32 @@
+---
+version: '2.1'
+services:
+  gemstash:
+    image: zappi/gemstash:1.1.0
+    environment:
+      RACK_ENV: production
+      GEMSTASH_DB_ADAPTER: postgres
+      GEMSTASH_DB_USERNAME: postgres
+      GEMSTASH_DB_PASSWORD: sekretpassword
+      GEMSTASH_DB_DATABASE: gemstash
+      GEMSTASH_DB_HOST: postgres
+      GEMSTASH_DB_PORT: 5432
+    ports:
+      - 9292:9292
+    volumes:
+      - gemstash_data:/home/gemstash/data
+  postgres:
+    image: postgres:9.6.3-alpine
+    volumes:
+      - postgres_data:/var/lib/mysql
+    expose:
+      - 5432
+    environment:
+      - POSTGRES_PASSWORD=sekretpassword
+      - POSTGRES_DB=gemstash
+
+volumes:
+  gemstash_data:
+    driver: local
+  postgres_data:
+    driver: local
