@@ -7,8 +7,11 @@
 :fetch_timeout: 20
 :log_file: :stdout
 
-# MySQL Adapter Settings
 <% if ENV['GEMSTASH_DB_ADAPTER'] == 'mysql2' %>
+# mysql2 adapter
 :db_adapter: <%= ENV['GEMSTASH_DB_ADAPTER'] %>
 :db_url: <%= "#{ENV['GEMSTASH_DB_ADAPTER']}://#{ENV['GEMSTASH_DB_USERNAME']}:#{ENV['GEMSTASH_DB_PASSWORD']}@#{ENV['GEMSTASH_DB_HOST']}:#{ENV['GEMSTASH_DB_PORT']}/#{ENV['GEMSTASH_DB_DATABASE']}" %>
+# sqlite adapter (default)
+:db_adapter: sqlite
+:db_url: sqlite://gemstash.db
 <% end %>
