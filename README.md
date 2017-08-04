@@ -21,6 +21,7 @@ See `docker-compose.mysql.yml` for an example of how to use MySQL. To run:
 ```
 $ export COMPOSE_FILE="docker-compose.mysql.yml"
 $ docker-compose up -d
+
 $ docker-compose ps
           Name                         Command               State           Ports
 -------------------------------------------------------------------------------------------
@@ -35,6 +36,7 @@ See `docker-compose.postgres.yml` for an example of how to use PostgreSQL. To ru
 ```
 $ export COMPOSE_FILE="docker-compose.postgres.yml"
 $ docker-compose up -d
+
 $ docker-compose ps
           Name                         Command               State           Ports
 -------------------------------------------------------------------------------------------
