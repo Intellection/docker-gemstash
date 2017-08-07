@@ -30,4 +30,4 @@ VOLUME "${GEMSTASH_HOME}/data"
 EXPOSE 9292
 COPY entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["gemstash", "start", "--no-daemonize"]
+CMD ["bundle", "exec", "gemstash", "start", "--no-daemonize"]

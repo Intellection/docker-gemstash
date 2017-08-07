@@ -3,7 +3,7 @@
 set -e
 
 # Drop root privileges if we are running gemstash as root.
-if [ "$1" = "gemstash" ] && [ "$(id -u)" = "0" ]; then
+if [ "$1" = "bundle" ] && [ "$2" = "exec" ] && [ "$3" = "gemstash" ] && [ "$(id -u)" = "0" ]; then
     # Change the ownership of user-mutable directories to gemstash
     chown -R "${GEMSTASH_USER}:${GEMSTASH_USER}" "${GEMSTASH_HOME}/data"
 
