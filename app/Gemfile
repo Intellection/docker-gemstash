@@ -1,0 +1,14 @@
+source 'https://rubygems.org'
+
+ruby '2.4.1'
+
+# A simple, fast Mysql library for Ruby, binding to libmysql.
+gem 'mysql2', '~> 0.4.8'
+
+# Pg is the Ruby interface to the PostgreSQL.
+gem 'pg', '~> 0.21.0'
+
+# Gemstash acts as a local RubyGems server, caching copies of gems from
+# RubyGems.org automatically, and eventually letting you push your own private
+# gems as well.
+gem 'gemstash', '1.1.0'
