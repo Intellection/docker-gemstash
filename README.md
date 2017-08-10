@@ -14,6 +14,17 @@ $ docker run \
 
 ### Advanced
 
+#### SQLite
+
+See `docker-compose.sqlite.yml` for an example of how to use SQLite. To run:
+
+```
+$ docker-compose -f docker-compose.sqlite.yml ps
+          Name                         Command               State           Ports
+-------------------------------------------------------------------------------------------
+dockergemstash_gemstash_1   /entrypoint.sh bundle exec ...   Up      0.0.0.0:9292->9292/tcp
+```
+
 #### MySQL
 
 See `docker-compose.mysql.yml` for an example of how to use MySQL. To run:
