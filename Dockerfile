@@ -1,4 +1,4 @@
-FROM ruby:2.4.1-alpine
+FROM ruby:2.5.0-alpine
 
 # Install system dependencies
 RUN apk --update add \
