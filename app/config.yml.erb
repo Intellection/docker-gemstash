@@ -15,7 +15,6 @@
   :adapter: 'mysql2'
   :user: <%= ENV['GEMSTASH_DB_USERNAME'] %>
   :password: <%= ENV['GEMSTASH_DB_PASSWORD'] %>
-  :max_connections: <%= ENV['GEMSTASH_PUMA_THREADS'].to_i + 1 %>
 <% elsif ENV['GEMSTASH_DB_ADAPTER'] == 'postgres' %>
 # postgres adapter
 :db_adapter: postgres
@@ -24,7 +23,6 @@
   :adapter: 'postgres'
   :user: <%= ENV['GEMSTASH_DB_USERNAME'] %>
   :password: <%= ENV['GEMSTASH_DB_PASSWORD'] %>
-  :max_connections: <%= ENV['GEMSTASH_PUMA_THREADS'].to_i + 1 %>
   :connect_timeout: 10
   :read_timeout: 5
   :timeout: 30
