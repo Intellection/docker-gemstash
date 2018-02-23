@@ -1,11 +1,13 @@
 # Changelog
 
-## 1.2.0
+## 1.1.0
+
+### 2018-02-23
 
 * Upgrade to Ruby 2.5.0.
 * Default `:puma_threads` to 16 if not specified by the `GEMSTASH_PUMA_THREADS` environment variable.
 
-## 1.1.0
+### 2017-08-10
 
 * Package gemstash v1.1.0.
 * Install system libraries for all database drivers i.e. postgresql, mysql2.
