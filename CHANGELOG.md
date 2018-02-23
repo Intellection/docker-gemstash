@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0
+
+* Upgrade to Ruby 2.5.0.
+* Default `:puma_threads` to 16 if not specified by the `GEMSTASH_PUMA_THREADS` environment variable.
+
 ## 1.1.0
 
 * Package gemstash v1.1.0.
