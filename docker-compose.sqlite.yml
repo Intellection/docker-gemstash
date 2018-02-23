@@ -8,7 +8,6 @@ services:
     image: zappi/gemstash:1.1.0
     environment:
       RACK_ENV: production
-      GEMSTASH_PUMA_THREADS: 1
     ports:
       - 9292:9292
     volumes:
