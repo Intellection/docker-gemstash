@@ -1,7 +1,7 @@
 :base_path: <%= "#{ENV['GEMSTASH_HOME']}/data" %>
 :cache_type: memory
 :rubygems_url: https://rubygems.org
-:puma_threads: <%= ENV['GEMSTASH_PUMA_THREADS'].to_i %>
+:puma_threads: <%= (ENV['GEMSTASH_PUMA_THREADS'] || 16).to_i %>
 :bind: tcp://0.0.0.0:9292
 :protected_fetch: false
 :fetch_timeout: 20
