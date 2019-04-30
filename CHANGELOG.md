@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0
+
+* Upgrade Ruby to v2.6.3.
+* Upgrade Gemstash to v2.0.0.
+
 ## 1.1.0
 
 ### 2018-02-23

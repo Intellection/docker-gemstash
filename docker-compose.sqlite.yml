@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: zappi/gemstash:1.1.0
+    image: zappi/gemstash:1.2.0
     environment:
       RACK_ENV: production
     ports:
