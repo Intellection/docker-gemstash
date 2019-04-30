@@ -22,8 +22,7 @@ RUN addgroup -g "9999" "${GEMSTASH_USER}" && \
 RUN mkdir -p "${GEMSTASH_HOME}/app"
 WORKDIR "${GEMSTASH_HOME}/app"
 COPY "app/" "${GEMSTASH_HOME}/app"
-RUN bundle config disable_checksum_validation true && \
-    bundle install --jobs 4 --retry 3
+RUN bundle install --jobs 4 --retry 3
 
 VOLUME "${GEMSTASH_HOME}/data"
 
