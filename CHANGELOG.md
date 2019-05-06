@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.0
+
+* Add `GEMSTASH_PROTECTED_FETCH` configuration option to enable protected
+  fetches which is disabled by default.
+
 ## 1.2.0
 
 * Upgrade Ruby to v2.6.3.
