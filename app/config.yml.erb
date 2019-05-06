@@ -3,7 +3,7 @@
 :rubygems_url: https://rubygems.org
 :puma_threads: <%= (ENV['GEMSTASH_PUMA_THREADS'] || 16).to_i %>
 :bind: tcp://0.0.0.0:9292
-:protected_fetch: false
+:protected_fetch: <%= ENV['GEMSTASH_PROTECTED_FETCH'] == 'true' ? 'true' : 'false' %>
 :fetch_timeout: 20
 :log_file: :stdout
 
