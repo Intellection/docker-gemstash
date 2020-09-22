@@ -9,7 +9,7 @@ RUN apk --update add \
       su-exec \
       tini && \
     gem update --system && \
-    gem update bundler && \
+    gem install bundler:1.17.2 && \
     rm -rf /var/cache/apk/*
 
 # Create gemstash user
@@ -27,6 +27,6 @@ RUN bundle install --jobs 4 --retry 3
 VOLUME "${GEMSTASH_HOME}/data"
 
 EXPOSE 9292
-COPY entrypoint.sh /
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["bundle", "exec", "gemstash", "start", "--no-daemonize"]
+USER ${GEMSTASH_USER}:${GEMSTASH_USER}
+ENTRYPOINT ["tini", "--"]
+CMD ["bundle", "exec", "gemstash", "start", "--no-daemonize", "--config-file=config.yml.erb"]
