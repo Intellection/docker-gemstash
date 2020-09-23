@@ -5,13 +5,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: zappi/gemstash:1.2.0
+    # image: zappi/gemstash:1.2.0
     environment:
       RACK_ENV: production
     ports:
       - 9292:9292
-    volumes:
-      - gemstash_data:/home/gemstash/data
 
 volumes:
   gemstash_data:

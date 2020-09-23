@@ -14,8 +14,6 @@ services:
       GEMSTASH_PUMA_THREADS: 4
     ports:
       - 9292:9292
-    volumes:
-      - gemstash_data:/home/gemstash/data
     links:
       - mysql
     depends_on:
