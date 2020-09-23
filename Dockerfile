@@ -27,4 +27,5 @@ RUN bundle install --jobs 4 --retry 3
 VOLUME "${GEMSTASH_HOME}/data"
 
 EXPOSE 9292
+USER ${GEMSTASH_USER}:${GEMSTASH_USER}
 CMD ["bundle", "exec", "gemstash", "start", "--no-daemonize"]
