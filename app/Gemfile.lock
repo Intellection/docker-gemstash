@@ -32,7 +32,7 @@ GEM
     mustermann (1.0.3)
     mysql2 (0.5.2)
     pg (0.18.4)
-    puma (3.12.1)
+    puma (3.12.6)
     rack (2.2.3)
     rack-protection (2.0.5)
       rack
