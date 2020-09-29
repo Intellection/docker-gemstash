@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.0
+
+* Always specify the config file in the command and always run as gemstash user.
+
 ## 1.3.0
 
 * Add `GEMSTASH_PROTECTED_FETCH` configuration option to enable protected
