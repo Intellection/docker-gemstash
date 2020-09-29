@@ -1,0 +1,33 @@
+:base_path: <%= "#{ENV['GEMSTASH_HOME']}/data" %>
+:cache_type: memory
+:rubygems_url: https://rubygems.org
+:puma_threads: <%= (ENV['GEMSTASH_PUMA_THREADS'] || 16).to_i %>
+:bind: tcp://0.0.0.0:9292
+:protected_fetch: <%= ENV['GEMSTASH_PROTECTED_FETCH'] == 'true' ? 'true' : 'false' %>
+:fetch_timeout: 20
+:log_file: :stdout
+
+<% if ENV['GEMSTASH_DB_ADAPTER'] == 'mysql2' %>
+# mysql2 adapter
+:db_adapter: mysql2
+:db_url: <%= "mysql2://#{ENV['GEMSTASH_DB_HOST']}:#{ENV['GEMSTASH_DB_PORT']}/#{ENV['GEMSTASH_DB_DATABASE']}" %>
+:db_connection_options:
+  :adapter: 'mysql2'
+  :user: <%= ENV['GEMSTASH_DB_USERNAME'] %>
+  :password: <%= ENV['GEMSTASH_DB_PASSWORD'] %>
+<% elsif ENV['GEMSTASH_DB_ADAPTER'] == 'postgres' %>
+# postgres adapter
+:db_adapter: postgres
+:db_url: <%= "postgres://#{ENV['GEMSTASH_DB_HOST']}:#{ENV['GEMSTASH_DB_PORT']}/#{ENV['GEMSTASH_DB_DATABASE']}" %>
+:db_connection_options:
+  :adapter: 'postgres'
+  :user: <%= ENV['GEMSTASH_DB_USERNAME'] %>
+  :password: <%= ENV['GEMSTASH_DB_PASSWORD'] %>
+  :connect_timeout: 10
+  :read_timeout: 5
+  :timeout: 30
+<% else %>
+# sqlite adapter (default)
+:db_adapter: sqlite3
+:db_url: sqlite://gemstash.db
+<% end %>
