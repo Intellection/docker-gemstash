@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.1
+
+* Bump puma from 3.12.1 to 3.12.6.
+* Bump rack from 2.0.7 to 2.2.3.
+* Bump activesupport from 5.2.3 to 5.2.4.4.
+
 ## 1.4.0
 
 * Always specify the config file in the command and always run as gemstash user.
