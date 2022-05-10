@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.6.3'
+ruby '3.1.2'
 
 # A simple, fast Mysql library for Ruby, binding to libmysql.
 gem 'mysql2', '~> 0.5'
