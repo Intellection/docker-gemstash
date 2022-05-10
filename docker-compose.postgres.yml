@@ -20,7 +20,7 @@ services:
     links:
       - postgres
   postgres:
-    image: postgres:9.6.3-alpine
+    image: postgres:10.18-alpine
     volumes:
       - postgres_data:/var/lib/mysql
     expose:
