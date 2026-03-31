@@ -1,4 +1,4 @@
-FROM ruby:2.6.3-alpine
+FROM ruby:3.4-alpine
 
 # Install system dependencies
 RUN apk --update add \
@@ -6,10 +6,10 @@ RUN apk --update add \
       mariadb-dev \
       postgresql-dev \
       sqlite-dev \
+      yaml-dev \
       su-exec \
       tini && \
     gem update --system && \
-    gem install bundler:1.17.2 && \
     rm -rf /var/cache/apk/*
 
 # Create gemstash user
