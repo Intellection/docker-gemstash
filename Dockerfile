@@ -24,6 +24,8 @@ WORKDIR "${GEMSTASH_HOME}/app"
 COPY "app/" "${GEMSTASH_HOME}/app"
 RUN bundle install --jobs 4 --retry 3
 
+RUN mkdir -p "${GEMSTASH_HOME}/data" && \
+    chown ${GEMSTASH_USER}:${GEMSTASH_USER} "${GEMSTASH_HOME}/data"
 VOLUME "${GEMSTASH_HOME}/data"
 
 EXPOSE 9292

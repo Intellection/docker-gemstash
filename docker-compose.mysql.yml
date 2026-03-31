@@ -20,18 +20,18 @@ services:
       mysql:
         condition: service_healthy
   mysql:
-    image: mysql:8.0
+    image: mariadb:11
     volumes:
       - mysql_data:/var/lib/mysql
     expose:
       - 3306
     environment:
-      - MYSQL_ROOT_PASSWORD=sekretpassword
-      - MYSQL_DATABASE=gemstash
+      - MARIADB_ROOT_PASSWORD=sekretpassword
+      - MARIADB_DATABASE=gemstash
     healthcheck:
       test:
         - CMD
-        - mysql
+        - mariadb
         - --user=root
         - --password=sekretpassword
         - --execute=select 1

@@ -8,7 +8,7 @@
 * Upgrade mysql2 gem from v0.5.2 to v0.5.7.
 * Upgrade puma from v3.12.6 to v7.2.0.
 * Upgrade all transitive dependencies (activesupport 8.1, sinatra 4.2, rack 3.2, etc.).
-* Upgrade MySQL image from v5.7.19 to v8.0.
+* Switch MySQL image to MariaDB v11 (Alpine uses MariaDB's client library, making this a better match).
 * Upgrade PostgreSQL image from v9.6.3 to v16.
 * Fix PostgreSQL volume mount path (was incorrectly set to /var/lib/mysql).
 * Remove deprecated docker-compose version key.
