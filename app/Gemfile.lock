@@ -34,7 +34,7 @@ GEM
     mysql2 (0.5.2)
     pg (0.18.4)
     puma (3.12.6)
-    rack (2.2.6.4)
+    rack (2.2.8.1)
     rack-protection (2.2.4)
       rack
     ruby2_keywords (0.0.5)
