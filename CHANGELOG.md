@@ -6,6 +6,8 @@
 * Upgrade Gemstash from 2.0.0 to 2.8.2, which adds a database migration for
   authorization names.
 * Upgrade all gem dependencies, including puma 7, sinatra 4, rack 3 and pg 1.
+* Build and publish multi-arch (`linux/amd64`, `linux/arm64`) images to Docker
+  Hub from GitHub Actions when a tag is pushed.
 
 ## 1.4.1
 
