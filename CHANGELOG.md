@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.8.2
+
+* Upgrade Ruby from 2.6.3 to 3.4.12.
+* Upgrade Gemstash from 2.0.0 to 2.8.2, which adds a database migration for
+  authorization names.
+* Upgrade all gem dependencies, including puma 7, sinatra 4, rack 3 and pg 1.
+
 ## 1.4.1
 
 * Bump puma from 3.12.1 to 3.12.6.
