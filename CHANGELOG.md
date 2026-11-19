@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.8.2-1
+
+* Upgrade Ruby from 3.4.12 to 3.4.13.
+
 ## 2.8.2
 
 * Upgrade Ruby from 2.6.3 to 3.4.12.
