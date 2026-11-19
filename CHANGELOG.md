@@ -3,6 +3,8 @@
 ## 2.8.2-1
 
 * Upgrade Ruby from 3.4.12 to 3.4.13.
+* Upgrade rack from 3.2.7 to 3.2.8, activesupport from 8.1.4 to 8.1.4.1 and
+  sqlite3 from 2.10.1 to 2.10.2 for security fixes.
 
 ## 2.8.2
 
